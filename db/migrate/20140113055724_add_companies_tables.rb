@@ -8,7 +8,7 @@ class AddCompaniesTables < ActiveRecord::Migration
       t.text :description
       t.string :company_type
       t.string :market
-      t.string :technology_used
+      t.string :technology_used, array: true
       t.boolean :interns_needed
       t.string :twitter_id
       t.timestamps

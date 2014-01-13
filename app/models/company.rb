@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+	scope :any_tech, -> (tech){where('? = ANY(technology_used)', tech)}
+	scope :all_tech, -> (tech){where('? = ALL(technology_used)', tech)}
 
 	def self.create(name, founded, website_url, logo_url, description, company_type, market, technology_used, interns_needed = false, twitter_id)
 
