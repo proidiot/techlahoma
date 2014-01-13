@@ -9,3 +9,8 @@
 
 starter = BlogRoll.create("datachomp", "rob sullivan", "datachomp.com", "http://datachomp.com/atom.xml", "atom")
 starter = BlogRoll.create("geekindulgence", "jeff french", "http://geekindulgence.com/", "http://geekindulgence.com/feed/", "wordpress")
+
+raise_more = Company.create("RaiseMore", "2011", "http://www.raisemore.com", 
+	"http://res.cloudinary.com/hfjjoialf/image/upload/v1377718497/qxvydfd3ukfeq91omywm.png", 
+	"We are an event fundraising platform focused on helping organizations enhance their events. Our platform helps you raise awareness, increase donations and share your story to a worldwide audience in real-time.",
+	"Start up", "Charity Fundraising", "Rails Postgres Sinatra PhoneGap", true, "@raise_more")
