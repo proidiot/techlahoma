@@ -11,13 +11,18 @@ class BlogRoll < ActiveRecord::Base
   end
 
   def self.create(title, author, uri, feed_uri, feed_type)
-      roll = BlogRoll.new
-      roll.title = title
-      roll.author = author
-      roll.blog_uri = uri
-      roll.feed_uri = feed_uri
-      roll.feed_type = feed_type
-      roll.save
+
+      roll = BlogRoll.where("title = ? AND author = ?", title, author).first
+
+      if(roll.nil?)
+        roll = BlogRoll.new
+        roll.title = title
+        roll.author = author
+        roll.blog_uri = uri
+        roll.feed_uri = feed_uri
+        roll.feed_type = feed_type
+        roll.save
+      end
       
       #back fill the last 3 months
       parse_feed_normal(roll.feed_uri, roll.id, Time.now - 3.months)
