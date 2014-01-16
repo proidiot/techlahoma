@@ -24,4 +24,5 @@ class Company < ActiveRecord::Base
 		company
 
 	end
+	
 end

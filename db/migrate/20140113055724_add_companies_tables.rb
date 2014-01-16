@@ -10,6 +10,7 @@ class AddCompaniesTables < ActiveRecord::Migration
       t.string :market
       t.string :technology_used, array: true
       t.boolean :interns_needed
+      t.boolean :hiring
       t.string :twitter_id
       t.timestamps
     end
