@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230023412) do
+ActiveRecord::Schema.define(version: 20140113055724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 20131230023412) do
     t.text    "feed_uri",                   null: false
     t.text    "feed_type",                  null: false
     t.boolean "active_flag", default: true, null: false
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "founded"
+    t.string   "website_url"
+    t.string   "logo_url"
+    t.text     "description"
+    t.string   "company_type"
+    t.string   "market"
+    t.string   "technology_used", array: true
+    t.boolean  "interns_needed"
+    t.string   "twitter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
